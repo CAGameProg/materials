@@ -53,7 +53,7 @@ To update `PATH` run this:
 To update `GOPATH` run this:
 
 ```
-~/bin/penv set GOPATH ~/gopath
+~/gopath/bin/penv set GOPATH ~/gopath
 ```
 
 Finally, close and reopen the terminal to apply the changes.
