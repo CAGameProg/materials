@@ -19,7 +19,7 @@ func main() {
 
 ## Getting user input
 
-Here is an example to read user input into a variable:
+Here is an example to read user input into a variable of type *float64*:
 
 ```go
 package main
@@ -30,10 +30,10 @@ func main() {
     fmt.Print("Enter a number: ")
 
     // We define the variable but it doesn't yet have a value
-    var inputNum int
+    var inputNum float64
     // We read the variable from the user
     // Don't worry about what the '&' sign means or how this works
-	fmt.Scanf("%d", &inputNum)
+	fmt.Scanf("%f", &inputNum)
 
     fmt.Println("You entered the number:", inputNum)
 }

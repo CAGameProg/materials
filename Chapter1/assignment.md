@@ -18,6 +18,9 @@ The Fahrenheit to Celsius conversion is given by the following equation:
 Write a program that asks the user for a temperature in Fahrenheit and
 prints out the temperature converted to Celsius.
 
+Make sure that the user input is a float not an int because conversions
+from Fahrenheit to Celsius often involve decimals (float64).
+
 ## 3.
 
 a. An unsigned byte is 8 bits therefore the largest (unsigned) integer it can store (in binary) is `11111111` which is 255 in decimal.
