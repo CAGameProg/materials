@@ -1,0 +1,8 @@
+8
+5 + 3
+
+56 because you are adding an integer to a rune which is just an integer,
+the character '3' is 51 in ASCII so 5 + 51 is 56.
+
+`fmt.Println(5 + "3")` produces an error because you cannot add a string and
+an integer.

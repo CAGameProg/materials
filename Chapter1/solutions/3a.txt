@@ -1,0 +1,2 @@
+Ten bits would have a max of `1111111111` this number in decimal
+is 2^10-1 which is 1023.

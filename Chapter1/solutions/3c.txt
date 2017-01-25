@@ -1,0 +1,3 @@
+The sign of the number is stored using the 32nd bit. So an int32 can store a
+maximum of 2^31-1, while an unsigned int32 can use all 32 bits for digits so
+can store a maximum of 2^32-1 (which is twice as large as 2^31-1).
