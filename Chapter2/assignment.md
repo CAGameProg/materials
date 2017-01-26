@@ -55,6 +55,10 @@ You are a friend!
 
 Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
 
+Remember that the modulus operator (`%`) gives the remainder between the division of two numbers.
+You can use this to see if one number is divisible by another. For example, `15 % 3` is `0` which means
+that `15` is divisible by `3`.
+
 For example here is the output from 1 to 17:
 
 ```
@@ -81,12 +85,18 @@ FizzBuzz
 
 Write a program that will calculate the number of perfect squares from 1 up to and including a certain number (1 is a perfect square).
 
-Here an example (where the user enters 1000):
+A perfect square is an integer which has an integer square root. Here are a few perfect squares:
+
+1, 4, 9, 16, 25, 36...
+
+Here an example of the program (where the user enters 1000):
 
 ```
 Enter an integer: 1000
 There are 31 perfect squares between 1 and 1000
 ```
+
+As an extra challenge, you can also create a program which creates an array which stores the first 50 perfect squares.
 
 ## 5. Bonus: guessing_game.go
 
