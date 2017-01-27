@@ -96,8 +96,6 @@ Enter an integer: 1000
 There are 31 perfect squares between 1 and 1000
 ```
 
-As an extra challenge, you can also create a program which creates an array which stores the first 50 perfect squares.
-
 ## 5. Bonus: guessing_game.go
 
 Write a random number guessing game.
