@@ -96,6 +96,23 @@ Enter an integer: 1000
 There are 31 perfect squares between 1 and 1000
 ```
 
+Hints:
+
+You can use `math.Sqrt(x)` to find the square root of a number. Remember to import `math`. For example:
+
+```go
+x := math.Sqrt(4) // This takes a float64 and returns a float64
+// Now x is equal to 2
+```
+
+Converting (or casting) a number to an integer with `int(x)` will truncate it. For example:
+
+```go
+x := 2.5
+y := int(x)
+fmt.Println(y) // This will print 2
+```
+
 ## 5. Bonus: guessing_game.go
 
 Write a random number guessing game.
