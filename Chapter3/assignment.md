@@ -28,7 +28,7 @@ Here is the beginning of the sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21
 
 a. Write a recursive function `fibR(n int) int` which can find `fib(n)`.
 
-b. Write an iterative (using for loops not recursion) function `fibIter(n int) int` which can find `fib(n)`.
+b. Write an iterative function (meaning it uses for loops not recursion) `fibIter(n int) int` which can find `fib(n)`.
 
 You can try comparing the speed of these two functions for computing fib(40) for example. You should see that the iterative version is much faster.
 
