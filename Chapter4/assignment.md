@@ -1,40 +1,108 @@
-# Pointers and Structs
+# 1. person.go
 
-## 1. vector.go
+Write a `Person` struct which will store a person's information. It should specifically store
+the person's first name, last name, age, and email address.
 
-Write a struct definition for a vector which is simply two numbers x and y. These two components
-should both be `float64`.
+Now write a `Describe` function which takes a pointer to a `Person` object and outputs a
+description of them:
 
-Write the following methods for it:
+```go
+func Describe(p *Person) {
+    // ...
+}
+```
 
-* `func (v *Vector) Magnitude() float64`: computes the magnitude of the vector.
-* `func (v *Vector) Angle() float64`: returns the angle (in degrees) of the vector with the x-axis.
-* `func (v *Vector) Mul(scalar float64) *Vector`: multiplies a given scalar with the vector.
-* `func (a *Vector) Add(b *Vector) *Vector`: adds a vector to the vector.
-* `func (a *Vector) Dot(b *Vector) float64`: computes the dot product between two vectors.
-* `func (a *Vector) AngleBetween(b *Vector) float64`: computes the angle between two vectors. Hint: use the dot product.
+For example:
 
-## 2. fraction.go
+```go
+john := &Person{"John", "Smith", 27, "jsmith@gmail.com"}
+Describe(john)
+```
 
-Write a `Fraction` struct which can be used to store irrational numbers. A fraction has two components,
-a numerator and a denominator, which should both be integers.
+The output of this program should be:
 
-Using this struct, write the following methods for it:
+```
+John Smith is 27 years old. For more information, you can contact John at jsmith@gmail.com
+```
 
-* `func (a *Fraction) Mul(b *Fraction) *Fraction`: returns the fraction which is the result of multiplying a and b together.
-* `func (a *Fraction) Div(b *Fraction) *Fraction`: returns the fraction which is the result of dividing a and b.
-* `func (a *Fraction) Add(b *Fraction) *Fraction`: returns the fraction which is the result of adding a and b together.
-* `func (a *Fraction) Sub(b *Fraction) *Fraction`: returns the fraction which is the result of subtracting b from a.
-* `func (f *Fraction) String() string`: returns the a string representation of the fraction, for example: `2/3`.
-* `func (f *Fraction) Approx() float64`: returns the fraction's decimal approximation.
+# 2. circle.go
 
-Also write a constructor:
+a. Write code for a `Circle` struct. This struct should store the circle's
+x and y coordinates (as `float64`s) as well as the circle's radius (also `float64`).
 
-* `func NewFraction(num, denom int) *Fraction`
+b. Write a function called `CircleArea` that takes as input a pointer to a Circle
+and returns the circle's area (remember circle area can be calculated with: pi*r*r).
+You can use `const Pi = 3.14` or `math.Pi` for a more exact constant:
 
-All fractions should be fully simplified. To help with this, you probably want to write
-a private method: `func (f *Fraction) simplify()`. 
+```go
+func CircleArea(c *Circle) float64 {
+    // ...
+}
+```
 
-Hint: To simplify a fraction, you need to divide the numerator and the denominator by the
-fraction's greatest common divisor. You can write the function `gcd(a, b int) int` to find the
-greatest common divisor between two numbers using [Euclid's algorithm](https://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid.27s_algorithm).
+c. Write a function called `MakeUnitCircle` which will simply return a pointer to a Circle with
+radius 1 and position (0, 0):
+
+```
+func MakeUnitCircle() *Circle {
+    // ...
+}
+```
+
+# 3. cards.go
+
+Write a struct for a `Card`. It should store the card's suit (hearts, diamonds, clubs, or spades)
+as well as the card's value (1-13, where 1 is Ace, 11 is Jack, 12 is Queen, and 13 is King).
+
+You may want to store the suit as an integer where, for example, 0 is hearts, 1 is diamonds, 2 is clubs, and 3 is spades.
+
+Now write a function called `MakeDeck` which will return an array of 52 cards (no shuffling necessary):
+
+```go
+func MakeDeck() []Card {
+    // ...
+}
+```
+
+Write a function called `PickRandomCard` which should take a Deck and return a card, and remove that card from the Deck.
+
+Hint: here's how to remove an element of an array at index `i`:
+```go
+a = append(a[:i], a[i+1:]...)
+```
+
+Here's the code for generating a random number between 0 and n:
+```go
+rand.Intn(n)
+```
+You'll need to seed the random number generator at the top of the program:
+```go
+	rand.Seed(time.Now().UTC().UnixNano())
+```
+
+Bonus: write a function called `Shuffle` which takes an array of cards and randomly shuffles them.
+The function should return the new shuffled array:
+
+```go
+func Shuffle(deck []Card) []Card {
+    // ...
+}
+```
+
+Hint: The best way to shuffle an array is to use the `rand.Perm` function (make sure to import `math/rand`).
+You use the function like so:
+
+```go
+array := []int{1, 2, 3, 4, 5, 6}
+newArray := make([]int, len(array))
+perm := rand.Perm(len(array))
+
+for i := 0; i < len(perm); i++ {
+    newArray[i] = array[perm[i]]
+}
+
+fmt.Println(newArray) // This should print a shuffled version of the `array` variable
+```
+
+The way this works is that `rand.Perm` gives you a slice that contains random numbers. Then you
+assign each position in the `newArray` a random position from the original `array` variable.
