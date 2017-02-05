@@ -96,9 +96,7 @@ Hints: here's how to remove an element of an array at index `i`:
 a = append(a[:i], a[i+1:]...)
 ```
 
-Note: arrays are pointers so you can modify them directly in a function just like you can a pointer.
-
-Here's the code for generating a random number between 0 and n:
+Here's the code for generating a random number between 0 and n (exclusive):
 ```go
 rand.Intn(n)
 ```
