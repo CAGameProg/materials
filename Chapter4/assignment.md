@@ -64,6 +64,8 @@ func DescribeCard(c *Card) string{
 }
 ```
 
+Hint: remember to convert an integer to a string use `strconv.Itoa(i)` (and make sure to import `strconv`).
+
 Here is example output:
 
 ```go
@@ -80,7 +82,14 @@ func MakeDeck() []Card {
 }
 ```
 
-Write a function called `PickRandomCard` which should take a Deck (an array of Cards) and return a random card. That card should also be removed from the deck.
+Write a function called `PickRandomCard` which should take a Deck (an array of Cards) and return a random card. That card should also be removed from the deck and
+a new deck with the resulting card removed should be returned as well:
+
+```go
+func PickRandomCard() ([]Card, Card) {
+    // ...
+}
+```
 
 Hints: here's how to remove an element of an array at index `i`:
 ```go
