@@ -56,6 +56,24 @@ as well as the card's value (1-13, where 1 is Ace, 11 is Jack, 12 is Queen, and 
 
 You may want to store the suit as an integer where, for example, 0 is hearts, 1 is diamonds, 2 is clubs, and 3 is spades.
 
+Write a function called `DescribeCard` which will take a pointer to a card and return a string:
+
+```go
+func DescribeCard(c *Card) string{
+    // ...
+}
+```
+
+Hint: remember to convert an integer to a string use `strconv.Itoa(i)` (and make sure to import `strconv`).
+
+Here is example output:
+
+```go
+card := &Card{3, 1}
+s := DescribeCard(card)
+fmt.Println(s) // This should print "3 of diamonds"
+```
+
 Now write a function called `MakeDeck` which will return an array of 52 cards (no shuffling necessary):
 
 ```go
@@ -64,23 +82,37 @@ func MakeDeck() []Card {
 }
 ```
 
-Write a function called `PickRandomCard` which should take a Deck and return a card, and remove that card from the Deck.
+Write a function called `PickRandomCard` which should take a Deck (an array of Cards) and return a random card. That card should also be removed from the deck and
+a new deck with the resulting card removed should be returned as well:
 
-Hint: here's how to remove an element of an array at index `i`:
+```go
+func PickRandomCard() ([]Card, Card) {
+    // ...
+}
+```
+
+Hints: here's how to remove an element of an array at index `i`:
 ```go
 a = append(a[:i], a[i+1:]...)
 ```
 
-Here's the code for generating a random number between 0 and n:
+Here's the code for generating a random number between 0 and n (exclusive):
 ```go
 rand.Intn(n)
 ```
-You'll need to seed the random number generator at the top of the program:
-```go
-	rand.Seed(time.Now().UTC().UnixNano())
-```
 
-Bonus: write a function called `Shuffle` which takes an array of cards and randomly shuffles them.
+You'll need to seed the random number generator at the top of the program. Just put this line at the start of the main function.
+
+```go
+rand.Seed(time.Now().UTC().UnixNano())
+```
+(also import "math/rand" and "time")
+
+## Bonus: Shuffle
+
+Another method of getting a random card is to shuffle the deck and then pick the top card.
+
+Write a function called `Shuffle` which takes an array of cards and randomly shuffles them.
 The function should return the new shuffled array:
 
 ```go
@@ -93,6 +125,8 @@ Hint: The best way to shuffle an array is to use the `rand.Perm` function (make 
 You use the function like so:
 
 ```go
+rand.Seed(time.Now().UTC().UnixNano())
+
 array := []int{1, 2, 3, 4, 5, 6}
 newArray := make([]int, len(array))
 perm := rand.Perm(len(array))
