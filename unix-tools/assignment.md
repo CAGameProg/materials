@@ -21,6 +21,15 @@ to use from the standard library.
 
 Hint: you should look in the [ioutil](https://golang.org/pkg/io/ioutil/) package.
 
+If you wanted to call, for example, `ReadDir` from the `ioutil` package, you
+would do the following:
+
+```go
+files, _ := ioutil.ReadDir(directory)
+
+// Do something with the files ...
+```
+
 Also recall that an array of bytes (`[]byte`) is the same as a string, and you
 can cast to convert between the two.
 
