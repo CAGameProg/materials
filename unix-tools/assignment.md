@@ -34,7 +34,7 @@ Also recall that an array of bytes (`[]byte`) is the same as a string, and you
 can cast to convert between the two.
 
 Don't overthink this program. It can be done using Go's ioutil package in about
-25 lines of code or less. You don't need to run the program line by line, you
+25 lines of code or less. You don't need to print the file line by line, you
 can just read the entire contents and print that.
 
 # 2. gofind.go
