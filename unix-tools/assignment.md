@@ -99,7 +99,7 @@ func searchDir(dir string, searchName string) {
     for _, f := range files {
         // Check if the file is a directory
         // If the file is a directory, then search it
-        // with searchDir(NameOfSubDirectory, searchName) // The searchName is still the same
+        // with searchDir(dir + NameOfSubDirectory, searchName) // The searchName is still the same
 
         // If the file is not a directory, then check if
         // its name matches the name we are searching for (the searchName)
@@ -107,6 +107,9 @@ func searchDir(dir string, searchName string) {
     }
 }
 ```
+
+Remember that `f.Name()` only gives the name of the file, not its entire path. To get the path,
+in the searchDir function, you can append `dir` to `f.Name()` with `dir + f.Name()`.
 
 Then in your main function, you can just call `searchDir(".")` to search the current
 directory and all sub-directories as well.
