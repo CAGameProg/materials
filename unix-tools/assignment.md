@@ -77,7 +77,7 @@ Then the program should print:
 ./gopath/src/program2/main.go
 ```
 
-This program is similar to the `ls` program we made in class, but now you have
+This program is similar to the `ls` program we made in class (located [here](notes/ls.go)), but now you have
 to check the name of the file before printing it, and you must also search
 any sub-folders.
 
