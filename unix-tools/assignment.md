@@ -34,7 +34,7 @@ Also recall that an array of bytes (`[]byte`) is the same as a string, and you
 can cast to convert between the two.
 
 Don't overthink this program. It can be done using Go's ioutil package in about
-25 lines of code or less. You don't need to run the program line by line, you
+25 lines of code or less. You don't need to print the file line by line, you
 can just read the entire contents and print that.
 
 # 2. gofind.go
@@ -77,7 +77,7 @@ Then the program should print:
 ./gopath/src/program2/main.go
 ```
 
-This program is similar to the `ls` program we made in class, but now you have
+This program is similar to the `ls` program we made in class (located [here](notes/ls.go)), but now you have
 to check the name of the file before printing it, and you must also search
 any sub-folders.
 
@@ -99,7 +99,7 @@ func searchDir(dir string, searchName string) {
     for _, f := range files {
         // Check if the file is a directory
         // If the file is a directory, then search it
-        // with searchDir(NameOfSubDirectory, searchName) // The searchName is still the same
+        // with searchDir(dir + NameOfSubDirectory, searchName) // The searchName is still the same
 
         // If the file is not a directory, then check if
         // its name matches the name we are searching for (the searchName)
@@ -107,6 +107,9 @@ func searchDir(dir string, searchName string) {
     }
 }
 ```
+
+Remember that `f.Name()` only gives the name of the file, not its entire path. To get the path,
+in the searchDir function, you can append `dir` to `f.Name()` with `dir + f.Name()`.
 
 Then in your main function, you can just call `searchDir(".")` to search the current
 directory and all sub-directories as well.
