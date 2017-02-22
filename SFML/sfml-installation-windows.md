@@ -6,6 +6,10 @@ Run this command to set your GOBIN environment variable:
 $ penv set GOBIN $GOPATH/bin
 ```
 
+```
+$ penv add PATH $GOBIN
+```
+
 # Windows SFML Installation
 
 Head over to this page to download CSFML: http://www.sfml-dev.org/download/csfml/
