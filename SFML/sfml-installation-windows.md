@@ -7,7 +7,7 @@ $ penv set GOBIN $GOPATH/bin
 ```
 
 ```
-$ penv add PATH $GOBIN
+$ penv append PATH $GOBIN
 ```
 
 # Windows SFML Installation
@@ -29,7 +29,7 @@ $ penv set LIBRARY_PATH ~/CSFML/lib
 ```
 
 ```
-$ penv add PATH ~/CSFML/bin
+$ penv append PATH ~/CSFML/bin
 ```
 
 # Installing GoSFML
