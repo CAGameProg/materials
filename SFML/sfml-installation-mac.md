@@ -10,6 +10,10 @@ $ echo 'export GOBIN=$GOPATH/bin' >> ~/.bash_profile
 $ echo 'export PATH=$PATH:/$GOBIN >> ~/.bash_profile
 ```
 
+```
+$ source ~/.bash_profile
+```
+
 # Mac SFML Installation
 
 Installing sfml on Mac is very simple.
