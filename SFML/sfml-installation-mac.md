@@ -6,6 +6,10 @@ Run this command to set your GOBIN environment variable:
 $ echo 'export GOBIN=$GOPATH/bin' >> ~/.bash_profile
 ```
 
+```
+$ echo 'export PATH=$PATH:/$GOBIN >> ~/.bash_profile
+```
+
 # Mac SFML Installation
 
 Installing sfml on Mac is very simple.
