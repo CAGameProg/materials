@@ -8,7 +8,7 @@ const (
 )
 
 func main() {
-	window := sf.NewRenderWindow(sf.VideoMode{screenWidth, screenHeight, 32}, "Input", sf.StyleDefault, sf.DefaultContextSettings())
+	window := sf.NewRenderWindow(sf.VideoMode{screenWidth, screenHeight, 32}, "Rectangle", sf.StyleDefault, sf.DefaultContextSettings())
 	window.SetVSyncEnabled(true)
 	window.SetFramerateLimit(60)
 
