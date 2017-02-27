@@ -1,4 +1,4 @@
-# Concurrency and Networking
+# Concurrency
 
 ## 1. repeat.go
 
