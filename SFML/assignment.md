@@ -26,10 +26,14 @@ frame (it doesn't matter what velocity you start with) and every frame check
 if the square has gone off the screen. If it has, reverse the x or y direction
 (depending on if the square hit the left/right walls vs the top/bottom walls).
 
+![bounce](./gifs/bounce.gif)
+
 ## 2. Bonus: gravity.go
 
 Try to simulate gravity with the bouncing square. This time don't worry about
 the square hitting the top of window.
+
+![gravity](./gifs/gravity.gif)
 
 Hint: when the rect bounces off the bottom of the screen you have to set
 its position to the `screenHeight` because otherwise the acceleration from
