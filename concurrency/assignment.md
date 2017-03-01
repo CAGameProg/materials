@@ -37,14 +37,14 @@ Here is an implementation of a `fetch` function:
 
 ```go
 func fetch(url string, ch chan string) {
-	start := time.Now()
-	resp, err := http.Get(url)
-	if err != nil {
-		ch <- fmt.Sprintf("Error: %v\n", err)
-		return
-	}
-	resp.Body.Close()
-	ch <- fmt.Sprintf("%.2fs %s\n", time.Since(start).Seconds(), url)
+    start := time.Now()
+    resp, err := http.Get(url)
+    if err != nil {
+        ch <- fmt.Sprintf("Error: %v\n", err)
+        return
+    }
+    resp.Body.Close()
+    ch <- fmt.Sprintf("%.2fs %s\n", time.Since(start).Seconds(), url)
 }
 ```
 
