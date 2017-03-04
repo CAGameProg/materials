@@ -13,9 +13,9 @@ func main() {
 	window.SetFramerateLimit(60)
 
 	rect, _ := sf.NewRectangleShape()
-	rect.SetSize(sf.Vector2f{30, 50})
+	rect.SetSize(sf.Vector2f{30, 30})
 	rect.SetFillColor(sf.ColorBlue())
-	rect.SetOrigin(sf.Vector2f{15, 25})
+	rect.SetOrigin(sf.Vector2f{15, 15})
 	rect.SetPosition(sf.Vector2f{screenWidth / 2, screenHeight / 2})
 
 	for window.IsOpen() {
